@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VEON Services - iHomeFinder</title>
+    <link
+      rel="shortcut icon"
+      href="assets/logoFavicon.ico"
+      type="image/x-icon"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
+
+      body {
+        overflow: hidden;
+      }
+
+      /* Top Navigation */
+      .top-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: #2c3e50;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        z-index: 1000;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .top-nav h1 {
+        font-size: 20px;
+        margin-right: 30px;
+      }
+
+      .nav-menu {
+        display: flex;
+        height: 100%;
+      }
+
+      .nav-category {
+        position: relative;
+        height: 100%;
+      }
+
+      .nav-category > a {
+        color: white;
+        text-decoration: none;
+        padding: 0 15px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .nav-category > a:hover,
+      .nav-category > a.active {
+        background: #37b28a;
+      }
+
+      .nav-category > a::after {
+        content: "▼";
+        font-size: 10px;
+        margin-left: 5px;
+      }
+
+      .dropdown-menu {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background: #34495e;
+        min-width: 200px;
+        display: none;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        z-index: 1001;
+      }
+
+      .nav-category:hover .dropdown-menu {
+        display: block;
+      }
+
+      .dropdown-menu a {
+        display: block;
+        padding: 10px 20px;
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.3s;
+      }
+
+      .dropdown-menu a:hover {
+        background: #2c3e50;
+      }
+
+      .dropdown-menu a.active {
+        background: #37b28a;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-top: 60px;
+        height: calc(100vh - 60px);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .logoBar {
+        padding: 5px 5px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+      <img
+        src="assets/logoFavicon.ico"
+        alt="VEON Services - MLS"
+        width="80"
+        class="logoBar"
+      />
+      <div class="nav-menu">
+        <!-- CRM Section -->
+        <div class="nav-category">
+          <a href="#" class="top-link">MLS Client Management</a>
+          <div class="dropdown-menu">
+            <a
+              href="https://account.idxhome.com/lead-dashboard"
+              target="contentFrame"
+              >MLS Dashboard</a
+            >
+            <a href="https://account.idxhome.com/leads" target="contentFrame"
+              >MLS Leads List</a
+            >
+            <a href="https://account.idxhome.com/tasks" target="contentFrame"
+              >MLS Tasks</a
+            >
+            <a
+              href="https://account.idxhome.com/lead-activity"
+              target="contentFrame"
+              >MLS Lead Activity</a
+            >
+            <a
+              href="https://account.idxhome.com/leads/export"
+              target="contentFrame"
+              >Export MLS Leads</a
+            >
+            <a
+              href="https://account.idxhome.com/leads/import"
+              target="contentFrame"
+              >Import MLS Leads</a
+            >
+          </div>
+        </div>
+
+        <!-- Markets Section -->
+        <!--  <div class="nav-category">
+          <a href="#" class="top-link">MLS Markets</a>
+          <div class="dropdown-menu">
+            <a href="https://account.idxhome.com/markets" target="contentFrame"
+              >MLS Markets</a
+            >
+            <a
+              href="https://account.idxhome.com/markets#new"
+              target="contentFrame"
+              >Add new MLS Market</a
+            >
+            <a
+              href="https://account.idxhome.com/markets/settings"
+              target="contentFrame"
+              >MLS Markets Settings</a
+            >
+          </div>
+        </div> -->
+
+        <!-- Listings Section -->
+        <div class="nav-category">
+          <a href="#" class="top-link">MLS Listings</a>
+          <div class="dropdown-menu">
+            <a
+              href="https://account.idxhome.com/listings/active"
+              target="contentFrame"
+              >MLS Active</a
+            >
+            <a
+              href="https://account.idxhome.com/listings/off-market"
+              target="contentFrame"
+              >MLS Sold/Off Market</a
+            >
+            <a
+              href="https://account.idxhome.com/listings/supplemental"
+              target="contentFrame"
+              >MLS Supplemental</a
+            >
+          </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="nav-category">
+          <a href="#" class="top-link">MLS Reports</a>
+          <div class="dropdown-menu">
+            <a
+              href="https://account.idxhome.com/reports/overview"
+              target="contentFrame"
+              >MLS Reports Overview</a
+            >
+            <a
+              href="https://account.idxhome.com/reports/email-activity"
+              target="contentFrame"
+              >MLS Email Activity</a
+            >
+            <a
+              href="https://account.idxhome.com/reports/leads"
+              target="contentFrame"
+              >MLS Leads and Contacts</a
+            >
+            <a
+              href="https://account.idxhome.com/reports/mobile"
+              target="contentFrame"
+              >MLS Mobile Statistics</a
+            >
+          </div>
+        </div>
+
+        <!-- Communications Section -->
+        <div class="nav-category">
+          <a href="#" class="top-link">MLS Communications</a>
+          <div class="dropdown-menu">
+            <a
+              href="https://account.idxhome.com/campaign/email/new"
+              target="contentFrame"
+              >New Email</a
+            >
+            <a
+              href="https://account.idxhome.com/campaign/email/drafts"
+              target="contentFrame"
+              >Email Drafts</a
+            >
+            <a
+              href="https://account.idxhome.com/campaign/email/sent"
+              target="contentFrame"
+              >Sent Emails</a
+            >
+            <a
+              href="https://account.idxhome.com/campaigns"
+              target="contentFrame"
+              >Campaigns</a
+            >
+            <a
+              href="https://account.idxhome.com/campaigns/routes"
+              target="contentFrame"
+              >Automations</a
+            >
+            <a
+              href="https://account.idxhome.com/campaign/automated-greetings"
+              target="contentFrame"
+              >Automated Greetings</a
+            >
+            <a
+              href="https://account.idxhome.com/campaigns/settings"
+              target="contentFrame"
+              >Settings</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <iframe name="contentFrame" src="https://account.idxhome.com/"></iframe>
+    </div>
+
+    <script>
+      // Set active link
+      const links = document.querySelectorAll(".dropdown-menu a");
+      links.forEach((link) => {
+        link.addEventListener("click", function () {
+          links.forEach((l) => l.classList.remove("active"));
+          this.classList.add("active");
+
+          // Also set the parent category as active
+          const topLinks = document.querySelectorAll(".top-link");
+          topLinks.forEach((l) => l.classList.remove("active"));
+          this.closest(".nav-category")
+            .querySelector(".top-link")
+            .classList.add("active");
+        });
+      });
+
+      // Set first link as active by default
+      document.querySelector(".dropdown-menu a").click();
+    </script>
+  </body>
+</html>
